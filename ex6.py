@@ -1,8 +1,16 @@
 import folium
 import pandas as pd
+
+# Load your data
 data = pd.read_csv("data.csv")
+
+# Create the base map
 m = folium.Map(location=[45.523, -122.675], zoom_start=13)
+
+# Group by lat/lon and count rows
 location_data = data.groupby(['lat', 'lon']).size().reset_index(name='count')
+
+# Loop through each row cleanly
 for index, row in location_data.iterrows():
     lat = row['lat']
     lon = row['lon']
