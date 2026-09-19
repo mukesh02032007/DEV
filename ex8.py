@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-data = pd.read_csv("winequality-red.csv")
+data = pd.read_csv("winequality-red.csv", sep=";")
 print("First 5 Rows:")
 print(data.head())
 print("\nSummary Statistics:")
